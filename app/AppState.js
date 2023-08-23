@@ -1,4 +1,5 @@
 import { Car } from "./models/Car.js"
+import { House } from "./models/house.js"
 import { Value } from "./models/Value.js"
 import { EventEmitter } from "./utils/EventEmitter.js"
 import { isValidProp } from "./utils/isValidProp.js"
@@ -12,6 +13,35 @@ class ObservableAppState extends EventEmitter {
 
 
   cars = loadState('cars', [Car])
+
+
+    houses = [
+      new House(
+        {
+          name: 'Mansion 101',
+          year: 2000,
+          bedrooms: 5,
+          bathrooms: 3.5,
+          sqft: 5000,
+          price: 100000,
+          description: 'Beautiful house inside and out',
+          imgUrl: "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFuc2lvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        }
+      ),
+      new House(
+        {
+          name: 'Mansion 51',
+          year: 1970,
+          bedrooms: 7,
+          bathrooms: 7.5,
+          sqft: 8000,
+          price: 1000000,
+          description: 'Come check this baddie out, you wont regret it!',
+          imgUrl: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuc2lvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        }
+      )
+    ]
+
 
   // cars = [
 
