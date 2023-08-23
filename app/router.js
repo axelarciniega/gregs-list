@@ -1,6 +1,7 @@
 import { AboutController } from "./controllers/AboutController.js";
 import { CarsController } from "./controllers/CarsController.js";
 import { HomeController } from "./controllers/HomeController.js";
+import { HousesController } from "./controllers/HousesController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
 import { CarsView } from "./views/CarsView.js";
@@ -123,9 +124,113 @@ export const router = [
   },
 
   // TODO for the students: start here for houses page
-  // {
-  //   path: 
-  //   controllers:
-  //   view:
-  // }
+  {
+    path: '#/houses',
+    controller: HousesController,
+    view: /**html*/ `
+<button class="btn btn-info col-1" data-bs-toggle="collapse" data-bs-target="#houseFormCollapse">
+       List House!
+       </button>
+
+       <div class = "collapse" id= "houseFormCollapse">
+
+<section class="row justify-content-between">
+<form action="">
+<div class="row d-flex justify-content-around">
+<div class="col-3">
+            <input required name='house' maxLength="20"
+              type="text"
+              class="form-control"
+              placeholder="Name of House"
+              aria-label="Name of House"
+              />
+          </div>
+          <div class="col-2">
+            <input required name='year' min='1800' max='2025'
+              type="number"
+              class="form-control"
+              placeholder="Year"
+              aria-label="year"
+            />
+          </div>
+
+          <div class="col-2">
+            <input required name='bedrooms' min='1'max='15'
+              type="number"
+              class="form-control"
+              placeholder="Number of Bedrooms"
+              aria-label="Number of Bedrooms"
+            />
+          </div>
+          <div class="col-3">
+            <input required name='bathroom' min='1'max='15'
+              type="number"
+              class="form-control"
+              placeholder="Number of Bathrooms"
+              aria-label="Number of Bathrooms"
+              />
+          </div>
+          <div class="col-3">
+            <input required name='price' max='2000000'
+            type="number"
+              class="form-control"
+              placeholder="Price"
+              aria-label="price"
+            />
+          </div>
+          <div class="col-5">
+            <input required name='sqft' max='2000000'
+            type="number"
+              class="form-control"
+              placeholder="SqFt?"
+              aria-label="sqft"
+            />
+          </div>
+          <div class="col-8">
+            <div class="form-floating">
+              <textarea required name='description' maxLength='200'
+              class="form-control"
+              placeholder="Description"
+                id="floatingTextarea2"
+                style="height: 100px"
+              ></textarea>
+              <label for="floatingTextarea2">Description</label>
+              </div>
+          
+          </div>
+          <div class="col-5">
+            <input required name='imgUrl'
+            type="text"
+              class="form-control"
+              placeholder="Image Here"
+              aria-label="img"
+            />
+          <div class = "text-end" type = "submit">
+          <button class = "bg-success">Submit!</button>
+          </div>
+      </form>
+      </div>
+      </section>
+    
+    
+    <section class = "row justify-content-center elevation rounded" id = 'houses'>
+    <div class="col-md-10 elevation">
+        <div class="row">
+        <div class="col-8">
+        <h2 class="text-center">year name</h2>
+        <div>
+        <span>date</span>
+        <span>sqft</span>
+        <span>bedrooms bathrooms</span>
+        <span>$$</span>
+        </div>
+        <p>description</p>
+        </div>
+        <div class="col-4">
+        <img src="" alt="house" />
+        </div>
+        </div>
+        </div>
+        </section>`
+  }
 ]
