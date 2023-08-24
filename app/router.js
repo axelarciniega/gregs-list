@@ -127,17 +127,17 @@ export const router = [
   {
     path: '#/houses',
     controller: HousesController,
-    view: /**html*/ `
+    view: /*html*/ `
 <button class="btn btn-info col-1" data-bs-toggle="collapse" data-bs-target="#houseFormCollapse">
        List House!
        </button>
 
-       <div class = "collapse" id= "houseFormCollapse">
+<div class = "collapse" id= "houseFormCollapse">
 
 <section class="row justify-content-between">
 <form action="">
-<div class="row d-flex justify-content-around">
-<div class="col-3">
+  <div class="row d-flex justify-content-around">
+          <div class="col-3">
             <input required name='house' maxLength="20"
               type="text"
               class="form-control"
@@ -204,13 +204,14 @@ export const router = [
               class="form-control"
               placeholder="Image Here"
               aria-label="img"
-            />
+            /div>
           <div class = "text-end" type = "submit">
           <button class = "bg-success">Submit!</button>
           </div>
+          </div>
       </form>
-      </div>
       </section>
+      </div>
     
     
     <section class = "row justify-content-center elevation rounded" id = 'houses'>
